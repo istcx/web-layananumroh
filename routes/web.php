@@ -167,7 +167,7 @@ Route::middleware(['auth', 'role:mitra'])->group(function () {
 });
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-
+Route::post('/postkabupaten', [RegionController::class, 'postKabupaten'])->name('postkabupaten');
 // Authentication Routes
 Auth::routes();
 Route::get('/login', [LoginController::class, 'show'])->name('show');

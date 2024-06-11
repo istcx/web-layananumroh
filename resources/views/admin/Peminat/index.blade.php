@@ -38,7 +38,7 @@
                                     <tr>
                                         <td>{{ $n++ }}</td>
                                         <td>{{ $Peminat->nama }}</td>
-                                        <td><a href="https://api.whatsapp.com/send/?phone={{ $Peminat->nomor_hp }}&text=Assalamu'alaikum {{ $Peminat->nama }}, kami dari Safari Umrah dan Haji apakah anda berminat dengan paket umroh/haji yang kami miliki? &app_absent=0"
+                                        <td><a href="https://api.whatsapp.com/send/?phone={{ $Peminat->nomor_hp }}&text=Assalamu'alaikum {{ $Peminat->nama }}, kami dari Sumber Barokah Umrah dan Haji apakah anda berminat dengan paket umroh/haji yang kami miliki? &app_absent=0"
                                                 target="_blank">{{ $Peminat->nomor_hp }}</a></td>
                                         <td>{{ $Peminat->email }}</td>
                                         <td>

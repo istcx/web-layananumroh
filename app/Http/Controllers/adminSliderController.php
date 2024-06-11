@@ -40,27 +40,27 @@ class adminSliderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $this->validate($request,[
-            'teks1' => 'required',
-            'teks2' => 'required',
-            'is_tampil'=> 'required',
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048' 
-        ]);
-        $image = $request->file('gambar');
-        $destinationPath = 'assets/images/slider';
-        $profileImage = date('YmdHis') . uniqid()."." . $image->getClientOriginalExtension();
-        $image->move($destinationPath, $profileImage);
+{
+    $this->validate($request, [
+        'teks1' => 'required',
+        'teks2' => 'required',
+        'is_tampil' => 'required',
+        'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+    ]);
+    $image = $request->file('gambar');
+    $destinationPath = 'assets/images/slider'; // Hapus satu 'assets/images/slider'
+    $profileImage = date('YmdHis') . uniqid() . "." . $image->getClientOriginalExtension();
+    $image->move($destinationPath, $profileImage);
 
-        $input = new Slider;
-        $input->teks1 = $request->teks1;
-        $input->teks2 = $request->teks2;
-        $input->is_tampil = $request->is_tampil ;
-        $input->gambar = $profileImage ;
-        $input->save();
-        Alert::success('Success', 'Sukses menambahkan slider');
-        return redirect()->route('adminSlider.index');
-    }
+    $input = new Slider;
+    $input->teks1 = $request->teks1;
+    $input->teks2 = $request->teks2;
+    $input->is_tampil = $request->is_tampil;
+    $input->gambar = $profileImage;
+    $input->save();
+    Alert::success('Success', 'Sukses menambahkan slider');
+    return redirect()->route('adminSlider.index');
+}
 
     /**
      * Display the specified resource.
@@ -93,29 +93,29 @@ class adminSliderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        $input = Slider::find($id);
-        if(isset($request->teks1)){
-            $input->teks1 = $request->teks1;
-        }        
-        if(isset($request->teks2)){
-            $input->teks2 = $request->teks2;
-        }        
-        if(isset($request->is_tampil)){
-            $input->is_tampil =$request->is_tampil;
-        }        
-        if ($request->file('gambar')) {
-            $image = $request->file('gambar');
-            $destinationPath = 'assets/images/slider';
-            $profileImage = date('YmdHis') . uniqid()."." . $image->getClientOriginalExtension();
-            $namePath=$image->move($destinationPath, $profileImage);
-            $input->gambar = $namePath ;
-        }
-        $input->update();
-        Alert::success('Success', 'Sukses edit');
-        return redirect()->route('adminSlider.index');
-
+{
+    $input = Slider::find($id);
+    if (isset($request->teks1)) {
+        $input->teks1 = $request->teks1;
     }
+    if (isset($request->teks2)) {
+        $input->teks2 = $request->teks2;
+    }
+    if (isset($request->is_tampil)) {
+        $input->is_tampil = $request->is_tampil;
+    }
+    if ($request->file('gambar')) {
+        $image = $request->file('gambar');
+        $destinationPath = 'assets/images/slider'; // Hapus satu 'assets/images/slider'
+        $profileImage = date('YmdHis') . uniqid() . "." . $image->getClientOriginalExtension();
+        $image->move($destinationPath, $profileImage);
+        $input->gambar = $profileImage;
+    }
+    $input->save();
+    Alert::success('Success', 'Sukses edit');
+    return redirect()->route('adminSlider.index');
+}
+
 
     /**
      * Remove the specified resource from storage.
