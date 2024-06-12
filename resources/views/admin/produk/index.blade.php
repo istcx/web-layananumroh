@@ -13,16 +13,15 @@
                 <div class="card-header">
                     <div class="d-flex align-items-center">
                         <h4 class="card-title">Data Produk</h4>
-                        <a href="{{ route('adminProduk.create') }}" style="margin-left:auto"><button
-                                class="btn btn-primary btn-round ml-auto">
+                        <a href="{{ route('adminProduk.create') }}" style="margin-left:auto">
+                            <button class="btn btn-primary btn-round ml-auto">
                                 <i class="fa fa-plus"></i>
                                 Tambah Produk
-                            </button></a>
-
+                            </button>
+                        </a>
                     </div>
                 </div>
                 <div class="card-body">
-
                     <div class="box-body table-responsive">
                         <table id="tableFoto" class="table table-bordered table-striped">
                             <thead>
@@ -66,16 +65,16 @@
                                                 </span>
                                                 Detail
                                             </button>
-                                            <a href="{{ route('adminProduk.edit', $produk->id) }}"><button
-                                                    class="btn btn-success btn-sm" style="margin: 5px">
+                                            <a href="{{ route('adminProduk.edit', $produk->id) }}">
+                                                <button class="btn btn-success btn-sm" style="margin: 5px">
                                                     <span class="btn-label">
                                                         <i class="fa fa-edit" style="font-size:10px"></i>
                                                     </span>
                                                     Edit
-                                                </button></a>
-
-                                            <button class="btn btn-danger btn-sm" style="margin: 5px" data-toggle="modal"
-                                                data-target="#ModalProdukHapus-{{ $produk->id }}">
+                                                </button>
+                                            </a>
+                                            <button class="btn btn-danger btn-sm" style="margin: 5px"
+                                                onclick="hapusData('{{ route('adminProduk.destroy', $produk->id) }}')">
                                                 <span class="btn-label">
                                                     <i class="fa fa-trash" style="font-size:10px"></i>
                                                 </span>
@@ -89,7 +88,6 @@
                                         role="dialog" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content" style="width: 120%">
-
                                                 <div class="modal-header border-0">
                                                     <h5 class="modal-title">
                                                         Detail Produk
@@ -102,41 +100,34 @@
                                                 <div class="row">
                                                     <div class="col-lg-9">
                                                         <div class="modal-body">
-
                                                             <div class="form-group row" style="margin-bottom: -15px">
-                                                                <label for="Nama" class="col-md-4">Nama
-                                                                    Produk</label>
+                                                                <label for="Nama" class="col-md-4">Nama Produk</label>
                                                                 <div class="col-md-8">
                                                                     <span>{{ $produk->nama }}</span>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row" style="margin-bottom: -15px">
-                                                                <label for="Nama" class="col-md-4">Kategori
-                                                                    Produk</label>
+                                                                <label for="Nama" class="col-md-4">Kategori Produk</label>
                                                                 <div class="col-md-8">
                                                                     <span>{{ $produk->kategori_paket }}</span>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row" style="margin-bottom: -15px">
-                                                                <label for="Kode" class="col-md-4">Kode
-                                                                    Produk</label>
+                                                                <label for="Kode" class="col-md-4">Kode Produk</label>
                                                                 <div class="col-md-8">
                                                                     <span>{{ $produk->slug }}</span>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row" style="margin-bottom: -15px">
                                                                 <label for="Harga"
-                                                                    class="col-md-4 col-md-offset-1 control-label">Harga
-                                                                    Produk</label>
+                                                                    class="col-md-4 col-md-offset-1 control-label">Harga Produk</label>
                                                                 <div class="col-md-8">
                                                                     <span>{{ $produk->harga }}</span>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row" style="margin-bottom: -15px">
                                                                 <label for="Nama"
-                                                                    class="col-md-4 col-md-offset-1 control-label">Tanggal
-                                                                    Berangkat
-                                                                </label>
+                                                                    class="col-md-4 col-md-offset-1 control-label">Tanggal Berangkat</label>
                                                                 <div class="col-md-8">
                                                                     <span>{{ $produk->tgl_berangkat }}</span>
                                                                 </div>
@@ -148,18 +139,16 @@
                                                                     <span>{{ $produk->durasi }}</span>
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group row"style="margin-bottom: -15px">
+                                                            <div class="form-group row" style="margin-bottom: -15px">
                                                                 <label for="Nama"
-                                                                    class="col-md-4 col-md-offset-1 control-label">Total
-                                                                    Seat</label>
+                                                                    class="col-md-4 col-md-offset-1 control-label">Total Seat</label>
                                                                 <div class="col-md-8">
                                                                     <span>{{ $produk->total_seat }}</span>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row" style="margin-bottom: -15px">
                                                                 <label for="Nama"
-                                                                    class="col-md-4 col-md-offset-1 control-label">Berangkat
-                                                                    Dari</label>
+                                                                    class="col-md-4 col-md-offset-1 control-label">Berangkat Dari</label>
                                                                 <div class="col-md-8">
                                                                     <span>{{ $produk->berangkat_dari }}</span>
                                                                 </div>
@@ -189,42 +178,10 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
                                                 <div class="modal-footer border-0">
                                                     <button type="button" class="btn btn-danger"
                                                         data-dismiss="modal">Tutup</button>
                                                 </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Modal Hapus-->
-                                    <div class="modal fade" id="ModalProdukHapus-{{ $produk->id }}" tabindex="-1"
-                                        role="dialog" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-
-                                                <div class="modal-header border-0">
-                                                    <h5 class="modal-title">
-                                                        Anda Yakin ingin menghapus produk {{ $produk->nama }}?
-                                                    </h5>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                </div>
-                                                <div class="modal-footer border-0">
-                                                    <button
-                                                        onclick="hapusData('{{ route('adminProduk.destroy', $produk->id) }}')"
-                                                        type="" id="addRowButton"
-                                                        class="btn btn-primary">Hapus</button>
-                                                    <button type="button" class="btn btn-danger"
-                                                        data-dismiss="modal">Tutup</button>
-                                                </div>
-
                                             </div>
                                         </div>
                                     </div>
@@ -236,11 +193,8 @@
             </div>
         </div>
     </div>
-    {{-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"> --}}
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.min.js"></script>
     <script>
         let table;
 
@@ -256,22 +210,39 @@
             });
         });
 
-
         function hapusData(url) {
-            // if (confirm('Yakin Hapus Kategori')) {
-            $.post(url, {
-                    '_token': $('[name=csrf-token').attr('content'),
-                    '_method': 'delete'
-                })
-                .done((response) => {
-                    alert('sukses menghapus');
-                    window.location.href = '/adminProduk';
-                })
-                .fail((errors) => {
-                    alert('Tidak Terhapus');
-                    return;
-                });
-            // }
+            Swal.fire({
+                title: 'Apakah Anda yakin?',
+                text: "Anda tidak dapat mengembalikan aksi ini!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, hapus!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.post(url, {
+                        '_token': $('[name=csrf-token]').attr('content'),
+                        '_method': 'delete'
+                    })
+                    .done((response) => {
+                        Swal.fire(
+                            'Dihapus!',
+                            'Produk berhasil dihapus.',
+                            'success'
+                        ).then(() => {
+                            location.reload();
+                        });
+                    })
+                    .fail((errors) => {
+                        Swal.fire(
+                            'Gagal!',
+                            'Produk gagal dihapus.',
+                            'error'
+                        );
+                    });
+                }
+            });
         }
     </script>
 @endsection
