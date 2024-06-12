@@ -121,7 +121,7 @@ class adminProdukController extends Controller
         $input->gambar = $namePath ;
         $input->save();
 
-        Alert::success('Success', 'Sukses mengedit produk ');
+        Alert::success('Success', 'Sukses menambah produk ');
         return redirect()->route('adminProduk.index');
     }
     

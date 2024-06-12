@@ -111,7 +111,7 @@
                                                                                 <option value="dihubungi">Sudah Dihubungi
                                                                                 </option>
                                                                                 <option value="selesai">Selesai </option>
-                                                                            @elseif($Peminat->status === 'Sudah Dihubungi')
+                                                                            @elseif($Peminat->status === 'dihubungi')
                                                                                 <option value="diterima">Diterima</option>
                                                                                 <option value="dihubungi" selected>
                                                                                     Sudah Dihubungi

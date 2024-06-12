@@ -130,7 +130,7 @@
                                                                                 <option value="dikonfirmasi">Dikonfirmasi
                                                                                 </option>
                                                                                 <option value="selesai">Selesai </option>
-                                                                            @elseif($Jamaah->status === 'dikerjakan')
+                                                                            @elseif($Jamaah->status === 'dikonfirmasi')
                                                                                 <option value="diterima">Diterima</option>
                                                                                 <option value="dikonfirmasi" selected>
                                                                                     dikonfirmasi
