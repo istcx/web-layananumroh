@@ -108,25 +108,37 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="index.html"><img
-                            src="{{ asset('assets/') }}../../assets/images/sumberbarokah.jpg" alt=""
-                            style="height: 70px;"></a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse navbar-right navigation-holder"
-                    style="padding-top: 10px;">
-                    <button class="close-navbar"><i class="ti-close"></i></button>
-                    <ul class="nav navbar-nav">
-                        <li><a href="/{{ $mitra->username }}/beranda">Home</a></li>
-                        <li><a href="/{{ $mitra->username }}/about">Tentang Kami</a></li>
-                        <li><a href="/{{ $mitra->username }}/syarat-dan-ketentuan">Syarat dan Ketentuan</a></li>
-                        <li><a href="/{{ $mitra->username }}/produk">Produk</a></li>
-                        <li><a href="https://haji.kemenag.go.id/v5/?search=waiting-list">Cek Porsi Haji</a></li>
-                        <li><a href="/{{ $mitra->username }}/galeri">Gallery</a></li>
-                        <li><a href="/{{ $mitra->username }}/artikel">Artikel</a></li>
-                        <li><a href="{{ route('login') }}" class="nav-link">Login</a></li>
-
-
-                    </ul>
-                </div>
+                        src="{{ asset('assets/') }}../../assets/images/sumberbarokah.jpg" alt=""
+                        style="height: 70px;"></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse navbar-right navigation-holder"
+                style="padding-top: 10px;">
+                <button class="close-navbar"><i class="ti-close"></i></button>
+                <ul class="nav navbar-nav">
+                    <li style="background: {{ Request::is('Barokah/beranda') ? '#F2F2F2' : '' }}">
+                        <a href="/{{ $mitra->username }}/beranda">Home</a>
+                    </li>
+                    <li style="background: {{ Request::is('Barokah/about') ? '#F2F2F2' : '' }}">
+                        <a href="/{{ $mitra->username }}/about">Tentang Kami</a>
+                    </li>
+                    <li style="background: {{ Request::is('Barokah/syarat-dan-ketentuan') ? '#F2F2F2' : '' }}">
+                        <a href="/{{ $mitra->username }}/syarat-dan-ketentuan">Syarat dan Ketentuan</a>
+                    </li>
+                    <li style="background: {{ Request::is('Barokah/produk') ? '#F2F2F2' : '' }}">
+                        <a href="/{{ $mitra->username }}/produk">Produk</a>
+                    </li>
+                    <li>
+                        <a href="https://haji.kemenag.go.id/v5/?search=waiting-list">Cek Porsi Haji</a>
+                    </li>
+                    <li style="background: {{ Request::is('Barokah/galeri') ? '#F2F2F2' : '' }}">
+                        <a href="/{{ $mitra->username }}/galeri">Gallery</a>
+                    </li>
+                    <li style="background: {{ Request::is('Barokah/artikel') ? '#F2F2F2' : '' }}">
+                        <a href="/{{ $mitra->username }}/artikel">Artikel</a>
+                    </li>
+                    <li><a href="{{ route('login') }}" class="nav-link">Login</a></li>
+                </ul>
+            </div>
                 <!-- end of nav-collapse -->
 
                 <!-- end of container -->

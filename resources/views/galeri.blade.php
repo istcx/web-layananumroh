@@ -27,26 +27,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-aligncenter">
-                    <h2 style="text-decoration-line: underline;">Video</h2>
-
-                    <div class="service-wrap">
-                        <div class="row">
-                            @foreach ($video as $video)
-                                <div class="col-lg-4 col-md-4 col-sm-6 custom-grid col-12">
-                                    <div class="service-single-item">
-                                        <div class="service-single-img">
-                                            <div class="h_iframe">
-                                                {!! $video->link !!}
-                                            </div>
-                                        </div>
-                                        <div class="service-text">
-                                            <h2>{{ $video->judul }}</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
                     <h2 style="text-decoration-line: underline;">Foto</h2>
                     <div class="service-wrap">
                         <div class="row">
