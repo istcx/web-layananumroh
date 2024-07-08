@@ -81,6 +81,7 @@
                 </div>
             </div>
         </div>
+        <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Edit Syarat dan Ketentuan</div>
@@ -130,6 +131,7 @@
                 </div>
             </div>
         </div>
+        <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
@@ -177,6 +179,8 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
         </div>
     </div>
     <button class="btn btn-primary me-md-2" type="submit">Submit</button>
